@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { ProfileRowComponent } from './profile-row/profile-row.component';
 import { ProposalsComponent } from './proposals/proposals.component';
 import { FriendService } from './friend.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { FriendService } from './friend.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule
   ],
   providers: [
     provideClientHydration(),
-    FriendService
+    FriendService,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
